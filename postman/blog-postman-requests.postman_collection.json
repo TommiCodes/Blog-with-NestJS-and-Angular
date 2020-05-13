@@ -1,18 +1,37 @@
 {
 	"info": {
-		"_postman_id": "8123373e-cb6f-4244-8ba4-3998d315d750",
-		"name": "blog-postman-requests",
+		"_postman_id": "eccf69f6-65d4-4a47-b248-5968c713c371",
+		"name": "Youtube_blog",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Create User",
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Thomas Test\",\n\t\"username\": \"thomas2\"\n}",
+					"raw": "{\n\t\"name\": \"Thomas Test\",\n\t\"username\": \"Thomas1\",\n\t\"email\": \"thomas@test.de\",\n\t\"password\": \"simplePassword\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,12 +54,12 @@
 			"response": []
 		},
 		{
-			"name": "Get All users",
+			"name": "Get Single user by id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users/",
+					"raw": "http://localhost:3000/users/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -48,39 +67,19 @@
 					"port": "3000",
 					"path": [
 						"users",
-						""
+						"3"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Find One user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users/8",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"8"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete One user",
+			"name": "Delete One",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users/8",
+					"raw": "http://localhost:3000/users/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -88,20 +87,20 @@
 					"port": "3000",
 					"path": [
 						"users",
-						"8"
+						"3"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update One user",
+			"name": "Update One",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Lisa Muster\",\n\t\"username\": \"lisa1\"\n}",
+					"raw": "{\n\t\"name\": \"updatedName\",\n\t\"username\": \"updatedUsername\",\n\t\"email\": \"shouldNotWork\",\n\t\"password\": \"shouldNotwork\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,7 +108,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/6",
+					"raw": "http://localhost:3000/users/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -117,7 +116,36 @@
 					"port": "3000",
 					"path": [
 						"users",
-						"6"
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"thomas@test.de\",\n\t\"password\": \"simplePassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
 					]
 				}
 			},
