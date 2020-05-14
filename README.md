@@ -10,7 +10,7 @@ Adding the Database Url is explained in the first video - https://www.youtube.co
 You can use the free database from www.elephantsql.com (explained in the first video)
 
 JWT Secret:  
-Explained in the third video - 
+Explained in the third video - https://www.youtube.com/watch?v=bbDDSylRM04
 
 
 Example of file: 
@@ -28,5 +28,5 @@ https://www.youtube.com/watch?v=5pFKw5iLL4s&feature=youtu.be
 https://www.youtube.com/watch?v=Z6kw_aJHJLU
 
 ### Video 3, JWT Authentication and password hashing
-https://www.youtube.com/watch?v=-DsT6YgHF2w
+https://www.youtube.com/watch?v=bbDDSylRM04
 
