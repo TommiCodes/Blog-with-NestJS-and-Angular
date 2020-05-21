@@ -150,6 +150,46 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Update Role of User (Protected with JWT and Role)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiVGhvbWFzIFRlc3QiLCJ1c2VybmFtZSI6IlRob21hczUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE1OTAwNzc2NzMsImV4cCI6MTU5MDA4NzY3M30.mlK5PEO-GrXtUJ_Px8ja2-G5XSxTEOamiwCj_9jUUUY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"role\": \"editor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/6/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6",
+						"role"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
