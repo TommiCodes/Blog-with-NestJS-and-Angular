@@ -30,3 +30,6 @@ https://www.youtube.com/watch?v=Z6kw_aJHJLU
 ### Video 3, JWT Authentication and password hashing
 https://www.youtube.com/watch?v=bbDDSylRM04
 
+### Video 4, JwtGuard, RolesGuard, custom @hasRoles() annotation, and protecting one endpoint
+https://www.youtube.com/watch?v=Wzn1rzqPq_s
+
