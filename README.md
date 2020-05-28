@@ -33,3 +33,6 @@ https://www.youtube.com/watch?v=bbDDSylRM04
 ### Video 4, JwtGuard, RolesGuard, custom @hasRoles() annotation, and protecting one endpoint
 https://www.youtube.com/watch?v=Wzn1rzqPq_s
 
+### Video 5, Simple Pagination for getting all users
+https://www.youtube.com/watch?v=dDQaNnmcR_0
+
