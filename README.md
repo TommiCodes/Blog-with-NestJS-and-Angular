@@ -19,6 +19,16 @@ Example of file:
     JWT_SECRET=jklasjdoij897231na
 
 
+## Start the Backend in dev Mode after you added the .env file
+`cd api`  
+`npm install`  
+`npm run start:dev`  
+  
+## Start the Frontend in dev Mode after you added the .env file
+`cd frontend`    
+`npm install`  
+`ng serve`  
+
 
 # Youtube Video Links
 ### Video 1, set up Blog Project (API)
@@ -36,3 +46,5 @@ https://www.youtube.com/watch?v=Wzn1rzqPq_s
 ### Video 5, Simple Pagination for getting all users
 https://www.youtube.com/watch?v=dDQaNnmcR_0
 
+### Video 6: Angular: Set Up Frontend and verify Connection to NestJs BE
+https://www.youtube.com/watch?v=YKPegsIAWhY
