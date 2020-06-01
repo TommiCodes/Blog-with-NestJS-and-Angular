@@ -8,16 +8,27 @@
 		{
 			"name": "Get All Users",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiVGhvbWFzIFRlc3QiLCJ1c2VybmFtZSI6IlRob21hczUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE1OTAwNzc2NzMsImV4cCI6MTU5MDA4NzY3M30.mlK5PEO-GrXtUJ_Px8ja2-G5XSxTEOamiwCj_9jUUUY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users",
+					"raw": "http://localhost:3000/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users"
 					]
 				}
@@ -31,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Thomas Test\",\n\t\"username\": \"Thomas1\",\n\t\"email\": \"thomas@test.de\",\n\t\"password\": \"simplePassword\"\n}",
+					"raw": "{\n\t\"name\": \"Thomas Test\",\n\t\"username\": \"Thomas5\",\n\t\"email\": \"thomas@test5.de\",\n\t\"password\": \"asd\",\n\t\"role\": \"admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,13 +50,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/",
+					"raw": "http://localhost:3000/api/users/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users",
 						""
 					]
@@ -59,15 +71,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users/3",
+					"raw": "http://localhost:3000/api/users/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users",
-						"3"
+						"2"
 					]
 				}
 			},
@@ -79,13 +92,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/users/3",
+					"raw": "http://localhost:3000/api/users/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users",
 						"3"
 					]
@@ -108,13 +122,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/1",
+					"raw": "http://localhost:3000/api/users/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users",
 						"1"
 					]
@@ -129,7 +144,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"email\": \"thomas@test.de\",\n\t\"password\": \"simplePassword\"\n}",
+					"raw": "{\n\t\"email\": \"thomas@test5.de\",\n\t\"password\": \"asd\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -137,13 +152,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/login",
+					"raw": "http://localhost:3000/api/users/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users",
 						"login"
 					]
@@ -159,7 +175,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiVGhvbWFzIFRlc3QiLCJ1c2VybmFtZSI6IlRob21hczUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE1OTAwNzc2NzMsImV4cCI6MTU5MDA4NzY3M30.mlK5PEO-GrXtUJ_Px8ja2-G5XSxTEOamiwCj_9jUUUY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiVGhvbWFzIFRlc3QiLCJ1c2VybmFtZSI6IlRob21hczUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE1OTAwOTA2OTIsImV4cCI6MTU5MDEwMDY5Mn0.fecCSraKPluFP0oDHOjkKfP2jf-YWBMUIySSp2WjEc0",
 							"type": "string"
 						}
 					]
@@ -176,15 +192,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/6/role",
+					"raw": "http://localhost:3000/api/users/3/role",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"users",
-						"6",
+						"3",
 						"role"
 					]
 				}
