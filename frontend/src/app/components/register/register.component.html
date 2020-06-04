@@ -1,1 +1,33 @@
-<p>register works!</p>
+<h1 style="text-align: center;">
+    Register Page
+</h1>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="container">
+        <mat-form-field>
+            <input matInput placeholder="Full Name" formControlName="name">
+            <mat-hint *ngIf="registerForm.get('name').errors">Full name is required</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Username" formControlName="username">
+            <mat-hint *ngIf="registerForm.get('username').errors">Username is required</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-hint *ngIf="registerForm.get('email').errors">Email is required</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password" formControlName="password">
+            <mat-hint *ngIf="registerForm.get('password').errors">Password is required</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password COnfirmation" formControlName="confirmPassword">
+            <mat-hint *ngIf="registerForm.get('confirmPassword').errors">Password is required</mat-hint>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" [disabled]="!registerForm.valid" type="submit">Register</button>
+    </div>
+</form>
