@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { map } from "rxjs/operators";
+import { map, tap } from "rxjs/operators";
 
 export interface LoginForm {
   email: string;
   password: string;
 };
+
+export interface User {
+  name?: string;
+  username?: string;
+  emai?: string;
+  password?: string;
+  // passwordConfirm?: string;
+}
 
 
 @Injectable({
@@ -24,6 +32,12 @@ export class AuthenticationService {
         return token;
       })
     )
+  }
 
+  register(user: User) {
+    return this.http.post<any>('/api/users', user).pipe(
+      tap(user => console.log(user)),
+      map(user => user)
+    )
   }
 }
