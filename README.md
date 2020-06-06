@@ -49,5 +49,8 @@ https://www.youtube.com/watch?v=dDQaNnmcR_0
 ### Video 6: Angular: Set Up Frontend and verify Connection to NestJs BE
 https://www.youtube.com/watch?v=YKPegsIAWhY
 
-### Video 7: Angular: Reactive Forms for Login + Register Component
+### Video 7: Angular: Reactive Forms for Login + Register Component Part 1/2
 https://www.youtube.com/watch?v=eg4vmsKe9h4
+
+### Video 8: Angular: CustomValidators with Reactive Forms Login + Register Part 2/2
+https://www.youtube.com/watch?v=BUMWCx-mmKU
