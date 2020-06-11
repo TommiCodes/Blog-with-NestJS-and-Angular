@@ -8,10 +8,12 @@ export interface LoginForm {
 };
 
 export interface User {
+  id?: number
   name?: string;
   username?: string;
   emai?: string;
   password?: string;
+  role?: string;
   // passwordConfirm?: string;
 }
 
