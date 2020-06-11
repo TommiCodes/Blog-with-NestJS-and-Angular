@@ -54,3 +54,6 @@ https://www.youtube.com/watch?v=eg4vmsKe9h4
 
 ### Video 8: Angular: CustomValidators with Reactive Forms Login + Register Part 2/2
 https://www.youtube.com/watch?v=BUMWCx-mmKU
+
+### Video 9: Angular Material: DataTable & Server Side Pagination
+https://www.youtube.com/watch?v=SoMQJmMUCpw
