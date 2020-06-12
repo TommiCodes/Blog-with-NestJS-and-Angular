@@ -1,4 +1,11 @@
 <h1 style="text-align: center;">All Users</h1>
+
+<mat-form-field>
+    <mat-label>Filter by Username</mat-label>
+    <input matInput type="text" [(ngModel)]="filterValue"
+    (input)="findByName(filterValue)" placeholder="Search Username">
+</mat-form-field>
+
 <div *ngIf="dataSource">
     <mat-table [dataSource]="dataSource.items">
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
