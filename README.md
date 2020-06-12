@@ -57,3 +57,6 @@ https://www.youtube.com/watch?v=BUMWCx-mmKU
 
 ### Video 9: Angular Material: DataTable & Server Side Pagination
 https://www.youtube.com/watch?v=SoMQJmMUCpw
+
+### Video 10: NestJS: Real Time Search - Filter By username and Paginate results 
+https://www.youtube.com/watch?v=KX8Mynyu9cY
