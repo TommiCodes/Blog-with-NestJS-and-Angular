@@ -1,3 +1,5 @@
+If you are coming from a specific video, you can have a look at the commits, they are named like: 'video-01: asd', 'video-02: asd', so you can switch to a commit/merge commit and see what exactly had been done, since this repo is currently evolving and sometimes parts of it are rewritten in newer videos.  
+
 # instructions to run the project 
 ## 1. Switch to branch develop to get the latest changes
 ## 2. Add an environment file to the project
@@ -57,3 +59,9 @@ https://www.youtube.com/watch?v=BUMWCx-mmKU
 
 ### Video 9: Angular Material: DataTable & Server Side Pagination
 https://www.youtube.com/watch?v=SoMQJmMUCpw
+
+### Video 10: NestJS: Real Time Search - Filter By username and Paginate results 
+https://www.youtube.com/watch?v=KX8Mynyu9cY
+
+### Video 11: Angular Material: Real Time Server Side User Search with Pagination
+https://www.youtube.com/watch?v=5SOIGT9mhAY

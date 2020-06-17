@@ -37,10 +37,21 @@ export class UserController {
 
 
     @Get()
-    index( @Query('page') page: number = 1, @Query('limit') limit: number = 10,): Observable<Pagination<User>> {
+    index( 
+        @Query('page') page: number = 1, 
+        @Query('limit') limit: number = 10,
+        @Query('username') username: string
+        ): Observable<Pagination<User>> {
         limit = limit > 100 ? 100 : limit;
 
-        return this.userService.paginate({page: Number(page), limit: Number(limit), route: 'http://localhost:3000/api/users'});
+        if(username === null || username === undefined) {
+            return this.userService.paginate({page: Number(page), limit: Number(limit), route: 'http://localhost:3000/api/users'});
+        } else {
+            return this.userService.paginateFilterByUsername(
+                {page: Number(page), limit: Number(limit), route: 'http://localhost:3000/api/users'},
+                {username}
+            )
+        }
     }
 
     @Delete(':id')
