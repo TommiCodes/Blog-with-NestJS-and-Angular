@@ -35,6 +35,8 @@ Example of file:
 `cd e2e`    
 `npm install`  
 `npm run cypress:open`
+### Generate e2e Report (html)
+`npm run cypress:report`
 
 
 # Youtube Video Links

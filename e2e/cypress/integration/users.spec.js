@@ -1,6 +1,7 @@
 describe('Users Page', () => {
 
     it('should load user table', () => {
+        cy.visit('/');
         cy.get('[routerlink="users"]').click();
         cy.get('.mat-table');
     });

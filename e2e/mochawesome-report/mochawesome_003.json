@@ -1,0 +1,161 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-06-22T19:01:17.886Z",
+    "end": "2020-06-22T19:01:23.146Z",
+    "duration": 5260,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "63764a16-7f15-48d4-b01b-6d8f62a54de8",
+      "title": "",
+      "fullFile": "cypress\\integration\\users.spec.js",
+      "file": "cypress\\integration\\users.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb880652-c2a5-467d-a47e-05287f320707",
+          "title": "Users Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should load user table",
+              "fullTitle": "Users Page should load user table",
+              "timedOut": null,
+              "duration": 3435,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[routerlink=\"users\"]').click();\ncy.get('.mat-table');",
+              "err": {},
+              "uuid": "18b05f37-2ec7-4460-bb09-2a1d056406a5",
+              "parentUUID": "cb880652-c2a5-467d-a47e-05287f320707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display right column names",
+              "fullTitle": "Users Page should display right column names",
+              "timedOut": null,
+              "duration": 195,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Id');\ncy.contains('Name');\ncy.contains('Username');\ncy.contains('Email');\ncy.contains('Role');",
+              "err": {},
+              "uuid": "d2cfe9d5-92d1-4a3a-aab8-6eb7fbb103c4",
+              "parentUUID": "cb880652-c2a5-467d-a47e-05287f320707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should navigate to next page",
+              "fullTitle": "Users Page should navigate to next page",
+              "timedOut": null,
+              "duration": 424,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[aria-label=\"Next page\"]').click();",
+              "err": {},
+              "uuid": "5163b78d-ef7c-45ce-91cc-365283112de3",
+              "parentUUID": "cb880652-c2a5-467d-a47e-05287f320707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should filter users by Username",
+              "fullTitle": "Users Page should filter users by Username",
+              "timedOut": null,
+              "duration": 990,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[placeholder=\"Search Username\"]').type('Thomas');\ncy.get('mat-table').find('mat-row').should('have.length', 4);",
+              "err": {},
+              "uuid": "2c7d53fc-8b8f-4877-9f3a-268ea8e2f684",
+              "parentUUID": "cb880652-c2a5-467d-a47e-05287f320707",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "18b05f37-2ec7-4460-bb09-2a1d056406a5",
+            "d2cfe9d5-92d1-4a3a-aab8-6eb7fbb103c4",
+            "5163b78d-ef7c-45ce-91cc-365283112de3",
+            "2c7d53fc-8b8f-4877-9f3a-268ea8e2f684"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5044,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
