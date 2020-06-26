@@ -31,6 +31,13 @@ Example of file:
 `npm install`  
 `ng serve`  
 
+## Start the e2e tests
+`cd e2e`    
+`npm install`  
+`npm run cypress:open`
+### Generate e2e Report (html)
+`npm run cypress:report`
+
 
 # Youtube Video Links
 ### Video 1, set up Blog Project (API)
