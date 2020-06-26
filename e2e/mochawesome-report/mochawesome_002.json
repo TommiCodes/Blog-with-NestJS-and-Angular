@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-06-22T19:01:07.228Z",
-    "end": "2020-06-22T19:01:12.415Z",
-    "duration": 5187,
+    "start": "2020-06-22T19:06:10.811Z",
+    "end": "2020-06-22T19:06:16.429Z",
+    "duration": 5618,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f46d51cb-a4f8-474e-8347-daa974aa5588",
+      "uuid": "3cf81e29-7b60-4aa6-9a86-d9d1eef619d6",
       "title": "",
       "fullFile": "cypress\\integration\\login.spec.js",
       "file": "cypress\\integration\\login.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4da510ef-c693-45e8-b1f1-16e960b9c2da",
+          "uuid": "88a6d2cc-aca7-4c26-9e93-9b923a119a79",
           "title": "Test Login Flow",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "should login user",
               "fullTitle": "Test Login Flow should login user",
               "timedOut": null,
-              "duration": 5126,
+              "duration": 5483,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('/login');\ncy.get('[formcontrolname=\"email\"]').type(USERNAME);\ncy.get('[formcontrolname=\"password\"]').type(PASSWORD);\ncy.get('[type=\"submit\"]').click();\ncy.url().should('include', 'admin');",
               "err": {},
-              "uuid": "21f7d9b6-f427-4576-a102-7230ae8ec42e",
-              "parentUUID": "4da510ef-c693-45e8-b1f1-16e960b9c2da",
+              "uuid": "400cfd19-449e-4255-a6ed-3ab333047377",
+              "parentUUID": "88a6d2cc-aca7-4c26-9e93-9b923a119a79",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "21f7d9b6-f427-4576-a102-7230ae8ec42e"
+            "400cfd19-449e-4255-a6ed-3ab333047377"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5126,
+          "duration": 5483,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
