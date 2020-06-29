@@ -105,7 +105,9 @@ export class UserService {
         delete user.password;
         delete user.role;
 
-        return from(this.userRepository.update(id, user));
+        return from(this.userRepository.update(id, user)).pipe(
+            switchMap(() => this.findOne(id))
+        );
     }
 
     updateRoleOfUser(id: number, user: User): Observable<any> {

@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Thomas Test\",\n\t\"username\": \"Thomas5\",\n\t\"email\": \"thomas@test5.de\",\n\t\"password\": \"asd\",\n\t\"role\": \"admin\"\n}",
+					"raw": "{\n\t\"name\": \"Thomas Test\",\n\t\"username\": \"Thomasa5\",\n\t\"email\": \"thomas@testa5.de\",\n\t\"password\": \"asd\",\n\t\"role\": \"admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,7 +71,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/users/2",
+					"raw": "http://localhost:3000/api/users/100",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -80,7 +80,7 @@
 					"path": [
 						"api",
 						"users",
-						"2"
+						"100"
 					]
 				}
 			},
@@ -203,6 +203,69 @@
 						"users",
 						"3",
 						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Profile Picture (with form-data and jwt)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiVGhvbWFzIFRlc3QiLCJ1c2VybmFtZSI6IlRob21hczUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE1OTM0NTYxMzEsImV4cCI6MTU5MzQ2NjEzMX0.cVXUA3LuUD2-4cgEb9aZZ9AMmpQinxk23gdsgQw_7BQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/thoma/Videos/youtube-public/blog-public/14/Thumbnail NEU.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Prfoile Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/profile-image/ThumbnailNEU2d8cfcb7-8624-43e3-a9cf-7ccc6f00570d.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"profile-image",
+						"ThumbnailNEU2d8cfcb7-8624-43e3-a9cf-7ccc6f00570d.png"
 					]
 				}
 			},
