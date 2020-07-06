@@ -110,11 +110,21 @@
 		{
 			"name": "Update One",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWUyIiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVWExZDY3OTNhLWRjY2MtNDU0Mi1hNzcyLTFlN2JkMjJiZWU4ZS5wbmcifSwiaWF0IjoxNTk0MDY1OTQ5LCJleHAiOjE1OTQwNzU5NDl9.KdMCUo5YyBEv6JA88kLWYlUv1Pdy_f2LO11HoKVLLaA",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"updatedName\",\n\t\"username\": \"updatedUsername\",\n\t\"email\": \"shouldNotWork\",\n\t\"password\": \"shouldNotwork\"\n}",
+					"raw": "{\n\t\"name\": \"updatedName3\",\n\t\"username\": \"updatedUsername\",\n\t\"email\": \"shouldNotWork\",\n\t\"password\": \"shouldNotwork\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -122,7 +132,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/users/1",
+					"raw": "http://localhost:3000/api/users/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -131,7 +141,7 @@
 					"path": [
 						"api",
 						"users",
-						"1"
+						"2"
 					]
 				}
 			},
