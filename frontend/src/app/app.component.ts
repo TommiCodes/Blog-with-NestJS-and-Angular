@@ -17,6 +17,10 @@ export class AppComponent {
     {
       name: 'Register',
       link: 'register'
+    },
+    {
+      name: 'Update Profile',
+      link: 'update-profile'
     }
   ];
 
