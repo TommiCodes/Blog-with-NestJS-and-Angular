@@ -1,0 +1,15 @@
+<div *ngIf="user" class="main-div">
+    <mat-card class="card">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <img src="http://localhost:3000/api/users/profile-image/{{user.profileImage}}" class="header-image">
+            </div>
+            <mat-card-title>{{user.name}}</mat-card-title>
+            <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Username: {{user.username}}</p>
+            <p>Role: {{user.role}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
