@@ -3,6 +3,7 @@ import { User } from 'src/app/services/authentication-service/authentication.ser
 import { UserData, UserService } from 'src/app/services/user-service/user.service';
 import { map, tap } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,7 @@ export class UsersComponent implements OnInit {
   pageEvent: PageEvent;
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'role'];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.initDataSource();
@@ -51,6 +52,10 @@ export class UsersComponent implements OnInit {
     this.userService.paginateByName(0, 10, username).pipe(
       map((userData: UserData) => this.dataSource = userData)
     ).subscribe()
+  }
+
+  navigateToProfile(id) {
+    this.router.navigate(['./' + id], {relativeTo: this.activatedRoute});
   }
 
 }
