@@ -34,17 +34,15 @@ export class BlogEntryEntity {
     @Column({default: 0})
     likes: number;
 
-    @Column()
+    @Column({nullable: true})
     headerImage: string;
 
-    @Column()
+    @Column({nullable: true})
     publishedDate: Date;
 
-    @Column()
+    @Column({nullable: true})
     isPublished: boolean;
 
     @ManyToOne(type => UserEntity, user => user.blogEntries)
     author: UserEntity;
-
-
 }

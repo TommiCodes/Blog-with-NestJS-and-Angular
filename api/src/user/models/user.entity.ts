@@ -19,7 +19,7 @@ export class UserEntity {
     @Column()
     email: string;
 
-    @Column()
+    @Column({select: false})
     password: string;
 
     @Column({type: 'enum', enum: UserRole, default: UserRole.USER})
