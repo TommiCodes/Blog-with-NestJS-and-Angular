@@ -89,10 +89,20 @@
 		{
 			"name": "Delete One",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU2IiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVTI4OGJjZTI4LTNhYTUtNDNiNy1hODQ4LTg2MzBjMmY1N2MzZC5wbmcifSwiaWF0IjoxNTk2NTU5MzU0LCJleHAiOjE1OTY1NjkzNTR9.4-YNmRkNEkBVM9YvCtmDYeYMIJFhCMkemM-w7DwgOWc",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/users/3",
+					"raw": "http://localhost:3000/api/users/14",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -101,7 +111,7 @@
 					"path": [
 						"api",
 						"users",
-						"3"
+						"14"
 					]
 				}
 			},
@@ -298,7 +308,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Test Title\",\r\n    \"description\": \"test description\",\r\n    \"body\": \"test body\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Test Title1\",\r\n    \"description\": \"test description1\",\r\n    \"body\": \"test body1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -364,6 +374,79 @@
 						"14"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update blogEntry (protected by jwt)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU2IiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVTI4OGJjZTI4LTNhYTUtNDNiNy1hODQ4LTg2MzBjMmY1N2MzZC5wbmcifSwiaWF0IjoxNTk2NTYwMzA3LCJleHAiOjE1OTY1NzAzMDd9.y1iKkRADHosxuJ0y0SwP8q4vFwfpXRT_DPRCULkjVgY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"updatedTitle\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/blogs/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogs",
+						"15"
+					]
+				},
+				"description": "Only the author can update a blogEntry"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blog Entry (Jwt Protected)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU2IiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVTI4OGJjZTI4LTNhYTUtNDNiNy1hODQ4LTg2MzBjMmY1N2MzZC5wbmcifSwiaWF0IjoxNTk2NTYwNDQ1LCJleHAiOjE1OTY1NzA0NDV9.yy7iQpGGNKj9_L0MVxZbNFeEhVJzLRsH0S5kYO5Zavg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blogs/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogs",
+						"15"
+					]
+				},
+				"description": "Only the author of a blog entry can delete the blogEntry"
 			},
 			"response": []
 		}

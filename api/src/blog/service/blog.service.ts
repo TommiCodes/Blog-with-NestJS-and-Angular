@@ -6,7 +6,7 @@ import { BlogEntryEntity } from '../model/blog-entry.entity';
 import { Repository } from 'typeorm';
 import { UserService } from 'src/user/service/user.service';
 import { User } from 'src/user/models/user.interface';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, tap } from 'rxjs/operators';
 const slugify = require('slugify');
 
 @Injectable()
@@ -43,6 +43,16 @@ export class BlogService {
             },
             relations: ['author']
         })).pipe(map((blogEntries: BlogEntry[]) => blogEntries))
+    }
+
+    updateOne(id: number, blogEntry: BlogEntry): Observable<BlogEntry> {
+        return from(this.blogRepository.update(id, blogEntry)).pipe(
+            switchMap(() => this.findOne(id))
+        )
+    }
+
+    deleteOne(id: number): Observable<any> {
+        return from(this.blogRepository.delete(id));
     }
 
     generateSlug(title: string): Observable<string> {
