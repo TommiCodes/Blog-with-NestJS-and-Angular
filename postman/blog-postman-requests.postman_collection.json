@@ -71,7 +71,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/users/100",
+					"raw": "http://localhost:3000/api/users/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -80,7 +80,7 @@
 					"path": [
 						"api",
 						"users",
-						"100"
+						"7"
 					]
 				}
 			},
@@ -115,7 +115,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWUyIiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVWExZDY3OTNhLWRjY2MtNDU0Mi1hNzcyLTFlN2JkMjJiZWU4ZS5wbmcifSwiaWF0IjoxNTk0MDY1OTQ5LCJleHAiOjE1OTQwNzU5NDl9.KdMCUo5YyBEv6JA88kLWYlUv1Pdy_f2LO11HoKVLLaA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWUzIiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVWExZDY3OTNhLWRjY2MtNDU0Mi1hNzcyLTFlN2JkMjJiZWU4ZS5wbmcifSwiaWF0IjoxNTk0MDY2NTQyLCJleHAiOjE1OTQwNzY1NDJ9.Fhq4Dwiphc87fj-WDtmVXQUQhOkwbCCKjHfdKQGUKHE",
 							"type": "string"
 						}
 					]
@@ -124,7 +124,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"updatedName3\",\n\t\"username\": \"updatedUsername\",\n\t\"email\": \"shouldNotWork\",\n\t\"password\": \"shouldNotwork\"\n}",
+					"raw": "{\n\t\"name\": \"updatedName5\",\n\t\"username\": \"updatedUsername\",\n\t\"email\": \"shouldNotWork\",\n\t\"password\": \"shouldNotwork\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -132,7 +132,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/users/2",
+					"raw": "http://localhost:3000/api/users/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -141,7 +141,7 @@
 					"path": [
 						"api",
 						"users",
-						"2"
+						"7"
 					]
 				}
 			},
@@ -226,7 +226,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoiVGhvbWFzIFRlc3QiLCJ1c2VybmFtZSI6IlRob21hczUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE1OTM0NTYxMzEsImV4cCI6MTU5MzQ2NjEzMX0.cVXUA3LuUD2-4cgEb9aZZ9AMmpQinxk23gdsgQw_7BQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU1IiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVWExZDY3OTNhLWRjY2MtNDU0Mi1hNzcyLTFlN2JkMjJiZWU4ZS5wbmcifSwiaWF0IjoxNTk1MDU3NzI1LCJleHAiOjE1OTUwNjc3MjV9.LkCfWm7G3_VO1z5wzy_lgpQMZVKxHmbJL-VkDYbeujU",
 							"type": "string"
 						}
 					]
@@ -265,7 +265,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/users/profile-image/ThumbnailNEU2d8cfcb7-8624-43e3-a9cf-7ccc6f00570d.png",
+					"raw": "http://localhost:3000/api/users/profile-image/ThumbnailNEU288bce28-3aa5-43b7-a848-8630c2f57c3d.png",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -275,7 +275,93 @@
 						"api",
 						"users",
 						"profile-image",
-						"ThumbnailNEU2d8cfcb7-8624-43e3-a9cf-7ccc6f00570d.png"
+						"ThumbnailNEU288bce28-3aa5-43b7-a848-8630c2f57c3d.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Blog Entry (jwt needed)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU1RCIsInVzZXJuYW1lIjoidGhvbWFzMTIzIiwiZW1haWwiOiJ0aG9tYXNAdGVzdDUuZGUiLCJyb2xlIjoiYWRtaW4iLCJwcm9maWxlSW1hZ2UiOiJUaHVtYm5haWxORVUyODhiY2UyOC0zYWE1LTQzYjctYTg0OC04NjMwYzJmNTdjM2QucG5nIn0sImlhdCI6MTU5NjQ4MTQxNiwiZXhwIjoxNTk2NDkxNDE2fQ.5vsx9RXAr2kU0nSGeI5jmIseMISbFg1gJ9GHJyriTCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Title\",\r\n    \"description\": \"test description\",\r\n    \"body\": \"test body\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get BlogEntries by user (with query Param)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blogs?userId=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogs"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindOne() Blog Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blogs/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogs",
+						"14"
 					]
 				}
 			},
