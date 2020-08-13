@@ -336,7 +336,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/blogs?userId=7",
+					"raw": "http://localhost:3000/api/blog-entries",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -344,13 +344,7 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"blogs"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "7"
-						}
+						"blog-entries"
 					]
 				}
 			},
@@ -362,7 +356,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/blogs/14",
+					"raw": "http://localhost:3000/api/blog-entries/14",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -370,7 +364,7 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"blogs",
+						"blog-entries",
 						"14"
 					]
 				}
@@ -385,7 +379,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU2IiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVTI4OGJjZTI4LTNhYTUtNDNiNy1hODQ4LTg2MzBjMmY1N2MzZC5wbmcifSwiaWF0IjoxNTk2NTYwMzA3LCJleHAiOjE1OTY1NzAzMDd9.y1iKkRADHosxuJ0y0SwP8q4vFwfpXRT_DPRCULkjVgY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU2IiwidXNlcm5hbWUiOiJ1cGRhdGVkVXNlcm5hbWUiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6IlRodW1ibmFpbE5FVTI4OGJjZTI4LTNhYTUtNDNiNy1hODQ4LTg2MzBjMmY1N2MzZC5wbmcifSwiaWF0IjoxNTk2NTYwNzUyLCJleHAiOjE1OTY1NzA3NTJ9.EdCAciuQ1IeyXtZ2q-TBf5-gX2hLQqYVtQ7AnTWKQGo",
 							"type": "string"
 						}
 					]
@@ -394,7 +388,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"updatedTitle\"\r\n}",
+					"raw": "{\r\n    \"title\": \"updated title again\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -402,7 +396,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/blogs/15",
+					"raw": "http://localhost:3000/api/blog-entries/16",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -410,8 +404,8 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"blogs",
-						"15"
+						"blog-entries",
+						"16"
 					]
 				},
 				"description": "Only the author can update a blogEntry"
@@ -434,7 +428,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/blogs/15",
+					"raw": "http://localhost:3000/api/blog-entries/15",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -442,11 +436,73 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"blogs",
+						"blog-entries",
 						"15"
 					]
 				},
 				"description": "Only the author of a blog entry can delete the blogEntry"
+			},
+			"response": []
+		},
+		{
+			"name": "Get BlogEntries by user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blog-entries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blog-entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All BlogEntries Paginated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blog-entries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blog-entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All BlogEntries by UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blog-entries/user/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blog-entries",
+						"user",
+						"7"
+					]
+				}
 			},
 			"response": []
 		}
