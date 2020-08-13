@@ -55,7 +55,7 @@ export class BlogController {
         return this.blogService.paginateByUser({
             limit: Number(limit),
             page: Number(page),
-            route: BLOG_ENTRIES_URL
+            route: BLOG_ENTRIES_URL + '/user/' + userId 
         }, Number(userId))
     }
 
