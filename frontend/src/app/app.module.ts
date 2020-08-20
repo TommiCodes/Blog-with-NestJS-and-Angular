@@ -23,6 +23,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 import {MatIconModule} from '@angular/material/icon';
+import { HomeComponent } from './components/home/home.component';
+import { AllBlogEntriesComponent } from './components/all-blog-entries/all-blog-entries.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {MatIconModule} from '@angular/material/icon';
     RegisterComponent,
     UsersComponent,
     UpdateUserProfileComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    HomeComponent,
+    AllBlogEntriesComponent
   ],
   imports: [
     BrowserModule,
