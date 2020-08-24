@@ -2,18 +2,38 @@
     <div>
         <mat-card class="container">
 
-            <mat-form-field>
-                <input matInput placeholder="ID" formControlName="id">
-            </mat-form-field>
+            <div style="width: 80%;">
+                <mat-card>
+                    <mat-card-content>
+                        <img *ngIf="form.get('profileImage').value" src="http://localhost:3000/api/users/profile-image/{{form.get('profileImage').value}}">
+                    <ul>
+                        <li>
+                            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                        </li>
+                    </ul>                    
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button color="warn" (click)="onClick()">
+                            <mat-icon>cloud_upload</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+                <input type="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*" style="display:none;">
+            </div>
 
-            <mat-form-field>
-                <input matInput placeholder="Name" formControlName="name">
-            </mat-form-field>
+            <div class="container" style="width: 80%;">
+                <mat-form-field>
+                    <input matInput placeholder="ID" formControlName="id">
+                </mat-form-field>
 
-            <mat-form-field>
-                <input matInput placeholder="Username" formControlName="username">
-            </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Name" formControlName="name">
+                </mat-form-field>
 
+                <mat-form-field>
+                    <input matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+            </div>
             <p>To change the properties password and email, special logic is needed, this will come in later videos</p>
             <p>To change the profile image, takes some time to implement, will code in extra video</p>
 
