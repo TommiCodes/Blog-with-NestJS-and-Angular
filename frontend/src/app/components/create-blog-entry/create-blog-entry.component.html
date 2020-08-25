@@ -1,0 +1,52 @@
+<form [formGroup]="form">
+    <div>
+        <mat-card class="container">
+
+            <div style="width: 80%;">
+                <mat-card>
+                    <mat-card-content>
+                        <img *ngIf="form.get('headerImage').value" src="http://localhost:3000/api/blog-entries/image/{{form.get('headerImage').value}}">
+                        <ul>
+                            <li>
+                                <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                            </li>
+                        </ul>
+                        <mat-card-actions>
+                            <button mat-button color="warn" (click)="onClick()">
+                                <mat-icon>cloud_upload</mat-icon>
+                                <small> Upload Image</small>
+                            </button>
+                        </mat-card-actions>
+                    </mat-card-content>
+                </mat-card>
+                <input type="file" #fileUpload id="fileUpload" name="fileUpload" accept="image/*" style="display: none;">
+            </div>
+
+            <div class="container" style="width:80%;">
+
+                <mat-form-field>
+                    <input matInput placeholder="Id" formControlName="id">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Title" formControlName="title">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="description">
+                </mat-form-field>
+
+                <div style="display: flex; width: 100%;">
+
+                    <mat-form-field style="width: 45%;">
+                        <textarea matInput rows="15" placeholder="Enter Markdown...." class="variable-textarea" formControlName="body"></textarea>
+                    </mat-form-field>
+                    <markdown class="variable-binding" style="border-style:dotted; width:45%; margin-left:10%;" [data]="form.get('body').value"></markdown>
+                </div>
+            </div>
+
+
+            <button mat-flat-button color="primary" [disabled]="!form.valid" type="submit" (click)="post()">Add Blog Entry</button>
+        </mat-card>
+    </div>
+</form>

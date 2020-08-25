@@ -31,6 +31,10 @@ export class AuthenticationService {
     )
   }
 
+  logout() {
+    localStorage.removeItem(JWT_NAME);
+  }
+
   register(user: User) {
     return this.http.post<any>('/api/users', user).pipe(
       tap(user => console.log(user)),

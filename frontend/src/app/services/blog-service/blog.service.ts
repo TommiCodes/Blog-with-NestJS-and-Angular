@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { BlogEntriesPageable } from 'src/app/model/blog-entry.interface';
+import { BlogEntriesPageable, BlogEntry } from 'src/app/model/blog-entry.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +18,16 @@ export class BlogService {
 
     return this.http.get<BlogEntriesPageable>('/api/blog-entries', {params});
   }
+
+  post(blogEntry: BlogEntry): Observable<BlogEntry> {
+    return this.http.post<BlogEntry>('/api/blog-entries', blogEntry);
+  }
+
+  uploadHeaderImage(formData: FormData): Observable<any> {
+    return this.http.post<FormData>('/api/blog-entries/image/upload', formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
+
 }
