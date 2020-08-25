@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/services/authentication-service/authentication.service';
 import { UserData, UserService } from 'src/app/services/user-service/user.service';
 import { map, tap } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
