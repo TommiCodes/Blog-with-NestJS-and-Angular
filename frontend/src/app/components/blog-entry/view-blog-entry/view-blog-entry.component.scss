@@ -1,0 +1,20 @@
+.header-image {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 300px;
+    left: 35%;
+}
+
+.card {
+    width: 70%;
+    max-width: 70%;
+    margin-top: 2%;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}

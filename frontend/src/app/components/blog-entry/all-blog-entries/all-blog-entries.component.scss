@@ -4,3 +4,10 @@ img {
     padding: 5px;
     width: 150px;
 }
+
+.card {
+    margin-top: 15px;
+    :hover {
+        cursor: pointer;
+    }
+}
