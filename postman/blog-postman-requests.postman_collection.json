@@ -74,29 +74,16 @@
 				},
 				{
 					"name": "Get All BlogEntries Paginated",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/blog-entries",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"blog-entries"
-							]
-						}
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
 					},
-					"response": []
-				},
-				{
-					"name": "Get BlogEntries by user",
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
 						"url": {
 							"raw": "http://localhost:3000/api/blog-entries",
 							"protocol": "http",
@@ -234,7 +221,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/blog-entries",
+							"raw": "http://localhost:3000/api/blog-entries/user/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -242,7 +229,9 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"blog-entries"
+								"blog-entries",
+								"user",
+								"7"
 							]
 						}
 					},
@@ -256,7 +245,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU1RCIsInVzZXJuYW1lIjoidGhvbWFzMTIzIiwiZW1haWwiOiJ0aG9tYXNAdGVzdDUuZGUiLCJyb2xlIjoiYWRtaW4iLCJwcm9maWxlSW1hZ2UiOiJUaHVtYm5haWxORVUyODhiY2UyOC0zYWE1LTQzYjctYTg0OC04NjMwYzJmNTdjM2QucG5nIn0sImlhdCI6MTU5NjQ4MTQxNiwiZXhwIjoxNTk2NDkxNDE2fQ.5vsx9RXAr2kU0nSGeI5jmIseMISbFg1gJ9GHJyriTCA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJuYW1lIjoidXBkYXRlZE5hbWU2NTU1YWEiLCJ1c2VybmFtZSI6InVwZGF0ZWRVc2VybmFtZWQiLCJlbWFpbCI6InRob21hc0B0ZXN0NS5kZSIsInJvbGUiOiJhZG1pbiIsInByb2ZpbGVJbWFnZSI6ImJpZ2ZpbGUwOWQxNTY0Ny0wMzBlLTRlMzEtODFmYy0yZmMzNGVhMjQ2MmUucG5nIn0sImlhdCI6MTU5Nzk0ODA0MiwiZXhwIjoxNTk3OTU4MDQyfQ.eY2JDUJu_qF-AwswgC8dwNpzSMxTcwotsfQxWkpw0QE",
 									"type": "string"
 								}
 							]
@@ -265,7 +254,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Test Title1\",\r\n    \"description\": \"test description1\",\r\n    \"body\": \"test body1\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Test Title7\",\r\n    \"description\": \"test description7\",\r\n    \"body\": \"test body7\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -273,7 +262,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/blogs",
+							"raw": "http://localhost:3000/api/blog-entries",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -281,7 +270,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"blogs"
+								"blog-entries"
 							]
 						}
 					},
@@ -291,7 +280,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "User-Entity",
+			"name": "User",
 			"item": [
 				{
 					"name": "Get All Users",
@@ -578,6 +567,28 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e05d518c-0229-4a60-ad22-5a4ddfbe322d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "52b6841d-906b-4888-8ac3-2ce78f1b3c07",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
