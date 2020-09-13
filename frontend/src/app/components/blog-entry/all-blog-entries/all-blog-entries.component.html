@@ -1,6 +1,5 @@
 <div style="width: 50%;  margin-left:25%;">
-    <h1 style="margin-top: 15px;">All Blog Entries</h1>
-    <mat-card *ngFor="let blogEntry of (dataSource | async)?.items" class="card" routerLink="../blog-entries/{{blogEntry.id}}">
+    <mat-card *ngFor="let blogEntry of blogEntries?.items" class="card" (click)="navigate(blogEntry.id)">
         <div style="display: flex;">
             <div>
                 <img *ngIf="blogEntry.headerImage !== null; else placeholderImage"
@@ -18,8 +17,8 @@
     </mat-card>
 
     <mat-paginator
-    [length]="(dataSource | async)?.meta.totalItems" 
-    [pageSize]="(dataSource | async)?.meta.itemsPerPage" 
+    [length]="blogEntries?.meta.totalItems" 
+    [pageSize]="blogEntries?.meta.itemsPerPage" 
     [pageSizeOptions]="[5,10,25,100]"
     (page)="pageEvent = $event; onPaginateChange($event)"
     showFirstLastButtons>
