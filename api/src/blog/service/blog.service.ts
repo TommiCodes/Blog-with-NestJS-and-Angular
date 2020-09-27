@@ -21,6 +21,7 @@ export class BlogService {
 
     create(user: User, blogEntry: BlogEntry): Observable<BlogEntry> {
         blogEntry.author = user;
+        console.log(blogEntry);
         return this.generateSlug(blogEntry.title).pipe(
             switchMap((slug: string) => {
                 blogEntry.slug = slug;
