@@ -1,16 +1,20 @@
+import { Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { BlogEntry } from 'src/app/model/blog-entry.interface';
 import { BlogService } from 'src/app/services/blog-service/blog.service';
+import { WINDOW } from 'src/app/window-token';
 
 @Component({
   selector: 'app-view-blog-entry',
   templateUrl: './view-blog-entry.component.html',
   styleUrls: ['./view-blog-entry.component.scss']
 })
-export class ViewBlogEntryComponent implements OnInit {
+export class ViewBlogEntryComponent {
+
+  origin = this.window.location.origin;
 
   blogEntry$: Observable<BlogEntry> = this.activatedRoute.params.pipe(
     switchMap((params: Params) => {
@@ -22,9 +26,10 @@ export class ViewBlogEntryComponent implements OnInit {
     })
   )
 
-  constructor(private activatedRoute: ActivatedRoute, private blogService: BlogService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private blogService: BlogService,
+    @Inject(WINDOW) private window: Window) { }
 
-  ngOnInit(): void {
-  }
 
 }

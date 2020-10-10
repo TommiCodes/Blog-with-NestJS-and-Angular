@@ -7,6 +7,8 @@ import { User } from 'src/app/model/user.interface';
 import { BlogEntriesPageable } from 'src/app/model/blog-entry.interface';
 import { BlogService } from 'src/app/services/blog-service/blog.service';
 import { PageEvent } from '@angular/material/paginator';
+import { WINDOW } from 'src/app/window-token';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-user-profile',
@@ -14,6 +16,8 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent {
+
+  origin = this.window.location.origin;
 
   private userId$: Observable<number> = this.activatedRoute.params.pipe(
     map((params: Params) => parseInt(params['id']))
@@ -30,7 +34,8 @@ export class UserProfileComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
-    private blogService: BlogService
+    private blogService: BlogService,
+    @Inject(WINDOW) private window: Window
   ) { }
 
   onPaginateChange(event: PageEvent) {

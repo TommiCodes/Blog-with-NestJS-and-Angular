@@ -5,7 +5,7 @@
             <div style="width: 80%;">
                 <mat-card>
                     <mat-card-content>
-                        <img *ngIf="form.get('headerImage').value" src="http://localhost:3000/api/blog-entries/image/{{form.get('headerImage').value}}">
+                        <img *ngIf="form.get('headerImage').value" src="{{origin}}/api/blog-entries/image/{{form.get('headerImage').value}}">
                         <ul>
                             <li>
                                 <mat-progress-bar [value]="file.progress"></mat-progress-bar>

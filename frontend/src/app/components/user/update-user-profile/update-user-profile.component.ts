@@ -6,6 +6,8 @@ import { switchMap, tap, map, catchError } from 'rxjs/operators';
 import { HttpEventType, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { User } from 'src/app/model/user.interface';
+import { WINDOW } from 'src/app/window-token';
+import { Inject } from '@angular/core';
 
 export interface File {
   data: any;
@@ -30,10 +32,13 @@ export class UpdateUserProfileComponent implements OnInit {
 
   form: FormGroup;
 
+  origin = this.window.location.origin;
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
-    private userService: UserService
+    private userService: UserService,
+    @Inject(WINDOW) private window: Window
   ) { }
 
   ngOnInit(): void {
