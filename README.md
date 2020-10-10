@@ -39,36 +39,13 @@ Example of file:
 `npm run cypress:report`
 
 
-# Youtube Video Links
-### Video 1, set up Blog Project (API)
-https://www.youtube.com/watch?v=5pFKw5iLL4s&feature=youtu.be
+# Youtube Playlist Links
+Blog Project only NestJS Videos  
+https://www.youtube.com/playlist?list=PLVfq1luIZbSnytbsm2i8Ocf_hyUHTsqbZ  
+  
+  
+Blog Project only Angular Videos  
+https://www.youtube.com/playlist?list=PLVfq1luIZbSmAWiXmsjUsvdYRu7RdxzaM
 
-### Video 2, Basic User Crud API
-https://www.youtube.com/watch?v=Z6kw_aJHJLU
-
-### Video 3, JWT Authentication and password hashing
-https://www.youtube.com/watch?v=bbDDSylRM04
-
-### Video 4, JwtGuard, RolesGuard, custom @hasRoles() annotation, and protecting one endpoint
-https://www.youtube.com/watch?v=Wzn1rzqPq_s
-
-### Video 5, Simple Pagination for getting all users
-https://www.youtube.com/watch?v=dDQaNnmcR_0
-
-### Video 6: Angular: Set Up Frontend and verify Connection to NestJs BE
-https://www.youtube.com/watch?v=YKPegsIAWhY
-
-### Video 7: Angular: Reactive Forms for Login + Register Component Part 1/2
-https://www.youtube.com/watch?v=eg4vmsKe9h4
-
-### Video 8: Angular: CustomValidators with Reactive Forms Login + Register Part 2/2
-https://www.youtube.com/watch?v=BUMWCx-mmKU
-
-### Video 9: Angular Material: DataTable & Server Side Pagination
-https://www.youtube.com/watch?v=SoMQJmMUCpw
-
-### Video 10: NestJS: Real Time Search - Filter By username and Paginate results 
-https://www.youtube.com/watch?v=KX8Mynyu9cY
-
-### Video 11: Angular Material: Real Time Server Side User Search with Pagination
-https://www.youtube.com/watch?v=5SOIGT9mhAY
+Blog Project All Videos
+https://www.youtube.com/playlist?list=PLVfq1luIZbSmJIuw_EZVP9mFiMED5fGIn
