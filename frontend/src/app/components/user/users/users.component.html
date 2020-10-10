@@ -37,6 +37,7 @@
             <mat-cell *matCellDef="let row">{{row.role}}</mat-cell>
         </ng-container>
     </mat-table>
+    
     <mat-paginator 
         [length]="dataSource.meta.totalItems" 
         [pageSize]="dataSource.meta.itemsPerPage" 
