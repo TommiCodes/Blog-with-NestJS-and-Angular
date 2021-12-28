@@ -66,8 +66,8 @@ export class UserService {
 
     paginateFilterByUsername(options: IPaginationOptions, user: User): Observable<Pagination<User>>{
         return from(this.userRepository.findAndCount({
-            skip: options.page * options.limit || 0,
-            take: options.limit || 10,
+            skip: Number(options.page) * Number(options.limit) || 0,
+            take: Number(options.limit) || 10,
             order: {id: "ASC"},
             select: ['id', 'name', 'username', 'email', 'role'],
             where: [
@@ -80,15 +80,15 @@ export class UserService {
                     links: {
                         first: options.route + `?limit=${options.limit}`,
                         previous: options.route + ``,
-                        next: options.route + `?limit=${options.limit}&page=${options.page +1}`,
-                        last: options.route + `?limit=${options.limit}&page=${Math.ceil(totalUsers / options.limit)}`
+                        next: options.route + `?limit=${options.limit}&page=${Number(options.page) + 1}`,
+                        last: options.route + `?limit=${options.limit}&page=${Math.ceil(totalUsers / Number(options.limit))}`
                     },
                     meta: {
-                        currentPage: options.page,
+                        currentPage: Number(options.page),
                         itemCount: users.length,
-                        itemsPerPage: options.limit,
+                        itemsPerPage: Number(options.limit),
                         totalItems: totalUsers,
-                        totalPages: Math.ceil(totalUsers / options.limit)
+                        totalPages: Math.ceil(totalUsers / Number(options.limit))
                     }
                 };              
                 return usersPageable;
