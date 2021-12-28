@@ -2,9 +2,12 @@ If you are coming from a specific video, you can have a look at the commits, the
 Hint: Upon 2022 the new features are not prefixed like this anymore (cause there isn't a video for every step anymore).
 
 # Updated 2022 (Project now dockerized)
-This Project is now dockerized.  
+1. Angular is updated to v13 and NestJS is updated to v8.
+2. This Project is now dockerized.  
 We have one Dockerfile for the api (NestJS) and one for the frontend(Angular).  
 On the top file level there is a `docker-compose.yml` file that you can start, there is also the database and everything configured.  So you don't need to do anything else than run `docker-compose up`.
+
+(A Video covering these updates will be released within January 2022).
 
 # Instructions to run the Project 
 
