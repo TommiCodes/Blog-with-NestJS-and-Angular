@@ -24,7 +24,7 @@ export class AuthenticationService {
 
     return this.http.post<any>('/api/users/login', {email: loginForm.email, password: loginForm.password}).pipe(
       map((token) => {
-        console.log('token');
+        console.log('token' + token.access_token);
         localStorage.setItem(JWT_NAME, token.access_token);
         return token;
       })
@@ -36,10 +36,7 @@ export class AuthenticationService {
   }
 
   register(user: User) {
-    return this.http.post<any>('/api/users', user).pipe(
-      tap(user => console.log(user)),
-      map(user => user)
-    )
+    return this.http.post<any>('/api/users', user);
   }
 
   isAuthenticated(): boolean {
@@ -50,9 +47,9 @@ export class AuthenticationService {
   getUserId(): Observable<number>{
     return of(localStorage.getItem(JWT_NAME)).pipe(
       switchMap((jwt: string) => of(this.jwtHelper.decodeToken(jwt)).pipe(
-        map((jwt) => jwt.user.id))
+        map((jwt: any) => jwt.user.id)
       )
-    )
+    ));
   }
 
 }
