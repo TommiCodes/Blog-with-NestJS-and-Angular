@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from '../models/user.entity';
-import { Repository, Like } from 'typeorm';
+import { Repository, Like, FindOneOptions } from 'typeorm';
 import { User, UserRole } from '../models/user.interface';
 import { Observable, from, throwError } from 'rxjs';
 import { switchMap, map, catchError} from 'rxjs/operators';
@@ -38,7 +38,14 @@ export class UserService {
     }
 
     findOne(id: number): Observable<User> {
-        return from(this.userRepository.findOne({id}, {relations: ['blogEntries']})).pipe(
+        const criteria: FindOneOptions<UserEntity> = {
+            //select: ['id', 'password', 'name', 'username', 'email', 'role', 'profileImage'],
+            relations: [ 'blogEntries' ],
+            where: {
+                id: id,
+            },
+        };
+        return from(this.userRepository.findOne(criteria)).pipe(
             map((user: User) => {
                 const {password, ...result} = user;
                 return result;
@@ -127,7 +134,14 @@ export class UserService {
     }
 
     validateUser(email: string, password: string): Observable<User> {
-        return from(this.userRepository.findOne({email}, {select: ['id', 'password', 'name', 'username', 'email', 'role', 'profileImage']})).pipe(
+        const criteria: FindOneOptions<UserEntity> = {
+            select: ['id', 'password', 'name', 'username', 'email', 'role', 'profileImage'],
+            relations: [ 'author' ],
+            where: {
+                email: email,
+            },
+        };
+        return from(this.userRepository.findOne(criteria)).pipe(
             switchMap((user: User) => this.authService.comparePasswords(password, user.password).pipe(
                 map((match: boolean) => {
                     if(match) {
@@ -143,6 +157,21 @@ export class UserService {
     }
 
     findByMail(email: string): Observable<User> {
-        return from(this.userRepository.findOne({email}));
+        const criteria: FindOneOptions<User> = {
+            select: [
+                'id', 
+                'name',
+                'username',
+                'email',                
+                'role',
+                'profileImage',
+                'blogEntries',
+            ],
+            relations: [ 'author' ],
+            where: {
+                email: email,
+            },
+        };
+        return from(this.userRepository.findOne(criteria));
     }
 }

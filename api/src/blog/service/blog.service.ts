@@ -3,7 +3,7 @@ import { Observable, of, from } from 'rxjs';
 import { BlogEntry } from '../model/blog-entry.interface';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BlogEntryEntity } from '../model/blog-entry.entity';
-import { Repository } from 'typeorm';
+import { Repository, FindOneOptions } from 'typeorm';
 import { UserService } from 'src/user/service/user.service';
 import { User } from 'src/user/models/user.interface';
 import { switchMap, map, tap } from 'rxjs/operators';
@@ -46,7 +46,7 @@ export class BlogService {
         return from(paginate<BlogEntry>(this.blogRepository, options, {
             relations: ['author'],
             where: [
-                {author: userId}
+                {id: userId}
             ]
         })).pipe(
             map((blogEntries: Pagination<BlogEntry>) => blogEntries)
@@ -54,15 +54,35 @@ export class BlogService {
     }
 
     findOne(id: number): Observable<BlogEntry> {
-        return from(this.blogRepository.findOne({id}, {relations: ['author']}));
+        const criteria: FindOneOptions<BlogEntry> = {
+            select: [
+                'id', 
+                'title', 
+                'slug', 
+                'description',
+                'body',
+                'createdAt',
+                'updatedAt',
+                'likes',
+                'author',
+                'headerImage',
+                'publishedDate',
+                'isPublished'
+            ],
+            relations: [ 'author' ],
+            where: {
+                id: id,
+            },
+        };
+        return from(this.blogRepository.findOne(criteria));
     }
 
     findByUser(userId: number): Observable<BlogEntry[]> {
         return from(this.blogRepository.find({
+            relations: ['author'],
             where: {
-                author: userId
-            },
-            relations: ['author']
+                id: userId
+            }            
         })).pipe(map((blogEntries: BlogEntry[]) => blogEntries))
     }
 
