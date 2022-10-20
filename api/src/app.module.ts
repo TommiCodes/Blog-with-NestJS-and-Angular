@@ -8,6 +8,8 @@ import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { join } from 'path';
+import { UserEntity } from './user/models/user.entity';
+import { BlogEntryEntity } from './blog/model/blog-entry.entity';
 
 @Module({
   imports: [
@@ -17,9 +19,14 @@ import { join } from 'path';
     ConfigModule.forRoot({isGlobal: true}),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL,
+      url: process.env.DATABASE_URL,      
       autoLoadEntities: true,
-      synchronize: true
+      synchronize: true,
+      /*logging: ["query", "error"],*/
+      entities: [        
+        UserEntity,
+        BlogEntryEntity        
+      ]
     }),
     UserModule,
     AuthModule,
