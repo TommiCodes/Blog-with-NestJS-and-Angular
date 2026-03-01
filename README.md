@@ -88,3 +88,8 @@ Since i am doing this in my freetime support via
 - "Youtube Follow"   
 
 etc. would be great.
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
